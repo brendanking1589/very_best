@@ -32,9 +32,27 @@
         <td><%= venue.address %></td>
         <td><%= venue.name %></td>
         <td><img src='<%= venue.image %>' class='img-responsive'></td>
-        <td><%= venue.cuisine.name %></td>
-        <td><%= venue.menu_item.name %></td>
-        <td><%= venue.bookmark.user_id %></td>
+        <td>
+          <% if venue.cuisine.present? %>
+            <a href="/cuisines/<%= venue.cuisine.id %>">
+              <%= venue.cuisine.name %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if venue.menu_item.present? %>
+            <a href="/dishes/<%= venue.menu_item.id %>">
+              <%= venue.menu_item.name %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if venue.bookmark.present? %>
+            <a href="/bookmarks/<%= venue.bookmark.id %>">
+              <%= venue.bookmark.user_id %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/venues/<%= venue.id %>" class="btn btn-primary">Show</a>
           <a href="/venues/<%= venue.id %>/edit" class="btn btn-warning">Edit</a>

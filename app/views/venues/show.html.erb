@@ -19,13 +19,31 @@
       <dd><img src="<%= @venue.image %>" class="img-responsive"></dd>
 
       <dt>Cuisine</dt>
-      <dd><%= @venue.cuisine_id %></dd>
+      <dd>
+        <% if @venue.cuisine.present? %>
+          <a href="/cuisines/<%= @venue.cuisine_id %>">
+            <%= @venue.cuisine.name %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Dish</dt>
-      <dd><%= @venue.dish_id %></dd>
+      <dd>
+        <% if @venue.menu_item.present? %>
+          <a href="/dishes/<%= @venue.dish_id %>">
+            <%= @venue.menu_item.name %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Bookmark</dt>
-      <dd><%= @venue.bookmark_id %></dd>
+      <dd>
+        <% if @venue.bookmark.present? %>
+          <a href="/bookmarks/<%= @venue.bookmark_id %>">
+            <%= @venue.bookmark.user_id %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 
