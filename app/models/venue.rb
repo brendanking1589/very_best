@@ -1,6 +1,9 @@
 class Venue < ApplicationRecord
   # Direct associations
 
+  belongs_to :bookmark,
+             :required => false
+
   belongs_to :cuisine,
              :required => false,
              :counter_cache => true
