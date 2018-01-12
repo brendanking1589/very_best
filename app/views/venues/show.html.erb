@@ -1,0 +1,40 @@
+<div class="page-header">
+  <h3>Venue #<%= @venue.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Address</dt>
+      <dd><%= @venue.address %></dd>
+
+      <dt>Name</dt>
+      <dd><%= @venue.name %></dd>
+
+      <dt>Image</dt>
+      <dd><%= @venue.image %></dd>
+
+      <dt>Cuisine</dt>
+      <dd><%= @venue.cuisine_id %></dd>
+
+      <dt>Dish</dt>
+      <dd><%= @venue.dish_id %></dd>
+
+      <dt>Bookmark</dt>
+      <dd><%= @venue.bookmark_id %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/venues" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/venues/<%= @venue.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_venue/<%= @venue.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
