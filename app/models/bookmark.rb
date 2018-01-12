@@ -9,6 +9,10 @@ class Bookmark < ApplicationRecord
 
   # Indirect associations
 
+  has_one    :menu_item,
+             :through => :venue,
+             :source => :menu_item
+
   # Validations
 
 end

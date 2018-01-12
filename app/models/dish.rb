@@ -7,6 +7,10 @@ class Dish < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :favorites,
+             :through => :restaurants,
+             :source => :bookmark
+
   has_many   :users,
              :through => :favorites,
              :source => :user
